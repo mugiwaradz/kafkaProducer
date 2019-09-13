@@ -37,7 +37,7 @@ public class Library {
         books.forEach( book -> {
             Map headers = Collections.singletonMap(KafkaHeaders.TOPIC, book.getGenre().toString());
             producerChannel.send(new GenericMessage(book.toString(), headers));
-        });
+        }); 
  
         System.out.println("Finished ProducerApplication run method...");
     };
